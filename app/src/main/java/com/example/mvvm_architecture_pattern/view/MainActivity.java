@@ -1,16 +1,11 @@
 package com.example.mvvm_architecture_pattern.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.example.mvvm_architecture_pattern.R;
 import com.example.mvvm_architecture_pattern.viewmodel.MainActivityViewModel;
@@ -29,58 +24,9 @@ public class MainActivity extends AppCompatActivity {
         mainActivityViewModell = ViewModelProviders.of(this).get(MainActivityViewModel.class);
 
 
-        editText1 = findViewById(R.id.editText1);
-        editText2 = findViewById(R.id.editText2);
-        button = findViewById(R.id.btnID);
-        subbtn = findViewById(R.id.btnsubID);
-        mulbtn = findViewById(R.id.btnmulID);
-        divbtn = findViewById(R.id.btndivlID);
 
 
-        //add
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                mainActivityViewModell.addFunction(editText1.getText().toString(),editText2.getText().toString())
-                        .observe(MainActivity.this, new Observer<String>() {
-                            @Override
-                            public void onChanged(String s) {
-                                Toast.makeText(MainActivity.this,s,Toast.LENGTH_SHORT).show();
-                            }
-                        });
-
-            }
-        });
-
-        //sub
-             subbtn.setOnClickListener(new View.OnClickListener() {
-                 @Override
-                 public void onClick(View view) {
-                     String rest = mainActivityViewModell.subFunction(editText1.getText().toString(), editText2.getText().toString());
-
-                     Toast.makeText(MainActivity.this, rest, Toast.LENGTH_SHORT).show();
-                 }
-             });
-
-             //mul
-        mulbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String rest = mainActivityViewModell.mulFunction(editText1.getText().toString(), editText2.getText().toString());
-
-                Toast.makeText(MainActivity.this, rest, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        divbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String rest = mainActivityViewModell.divFunction(editText1.getText().toString(), editText2.getText().toString());
-
-                Toast.makeText(MainActivity.this, rest, Toast.LENGTH_SHORT).show();
-            }
-        });
 
     }
 }
