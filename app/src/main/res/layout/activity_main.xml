@@ -27,13 +27,66 @@
 
         />
 
-    <Button
-        android:layout_width="wrap_content"
+
+
+<HorizontalScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Result"
-        android:layout_gravity="center"
-        android:id="@+id/btnID"
-        android:layout_marginTop="10dp"
-        />
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Addition"
+            android:layout_gravity="center"
+            android:id="@+id/btnID"
+            android:layout_marginTop="10dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subtraction"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/btnsubID"
+            android:layout_marginTop="10dp"
+            />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Multiplication"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/btnmulID"
+            android:layout_marginTop="10dp"
+            />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Division"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/btndivlID"
+            android:layout_marginTop="10dp"
+            />
+
+
+    </LinearLayout>
+
+
+</HorizontalScrollView>
+
+
 
 </LinearLayout>
